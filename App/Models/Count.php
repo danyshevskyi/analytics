@@ -59,7 +59,7 @@ public function __construct($project, $mode) { // Mode: all, reg
 
 			$this->timestamp = date("Y-m-d H:i:s");
 				$this->date_now = date("Y-m-d").'%';
-					$this->obj_ip_in = new CountIn($this->table_analytics, $this->ip_out);
+					$this->obj_ip_in = new CountIn($this->table_analytics, $this->ip_out, $this->project);
 										
 		// get data from api
 		$data_api = $this->get_ip_detail($this->ip_out);
@@ -207,7 +207,6 @@ public function send_mail($project) {
 		
 		$message = "<h2><a href='#' style='color:black'>".$this->userFromId($this->token_out)."</a></h2>";
 		$message .= "<p style='font-size:18px'>".$this->city.", ".$this->region."</p>";
-		$message .= "<p style='font-size:18px'><a href='#' style='color:black'>Referer: ".$this->referer."</a></p>";
 		
 		$header = "From: DOV Analytics <admin@dov.pp.ua> \r\n";
 		$header .= "Cc:admin@dov.pp.ua \r\n";
@@ -257,7 +256,7 @@ public function search_token($where, $value) {
 					AND
 					token != '0'	
 					AND 
-					date_activity LIKE '$this->date_now';");
+					date_activity LIKE '$this->date_now';", $this->project);
 
 				if($result = $request->fetch())
 				{
@@ -289,7 +288,7 @@ public function update($key, $array_ip_in) {
 						region = '$this->region',
 						isp = '$this->isp'
 						WHERE
-						id_analytics = '$id_row_update'");	   
+						id_analytics = '$id_row_update'", $this->project);	   
 		}
 		elseif($key == 'without_token')
 		{
@@ -305,7 +304,7 @@ public function update($key, $array_ip_in) {
 						region = '$this->region',
 						isp = '$this->isp'
 						WHERE
-						id_analytics = '$id_row_update'");
+						id_analytics = '$id_row_update'", $this->project);
 		}
 }
 
@@ -328,12 +327,12 @@ public function union($del, $upd) {
 						region = '$this->region',
 						isp = '$this->isp'
 						WHERE
-						id_analytics = '$id_row_update'");
+						id_analytics = '$id_row_update'", $this->project);
 
 			$this->db("DELETE
 					   FROM $this->table_analytics 
 					   WHERE 
-					   id_analytics = '$id_row_del'");
+					   id_analytics = '$id_row_del'", $this->project);
 }
 
 public function add() {
@@ -348,7 +347,7 @@ public function add() {
 				('$this->token_out', '$this->ip_out', '$this->timestamp', '$this->device', '$this->os',
 				'$this->browser', 1, '$this->city', '$this->region', '$this->isp',
 				'$this->referer', '$this->country', '$this->lang',
-				'$this->latitude', '$this->longitude')");
+				'$this->latitude', '$this->longitude')", $this->project);
 
 			if($this->mode == 'all')
 			{
@@ -407,7 +406,7 @@ public function user_agent_parser($user_agent) {
 
 public function userFromId($token) {
 
-	$request = $this->db("SELECT * FROM auth_users WHERE token = '$token'");
+	$request = $this->db("SELECT * FROM auth_users WHERE token = '$token'", $this->project);
 		$result = $request->fetch();
 	
 		return $result['email'];

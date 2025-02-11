@@ -59,7 +59,7 @@
               class="btn 1btn-outline-dark col-12 1mx-auto fs-5 bg-white"
               onclick="getAnalytics('{{ list.key_name }}')">
                 {% if list.key_name == 'index' %}
-                  <img src="{{ list.url }}/index/App/Views/img/favicon.ico" width="54px">
+                  <img src="{{ list.url }}/public/favicon.ico" width="54px">
                 {% else %}
                   <img src="{{ list.url }}/App/Views/img/favicon.ico" width="54px">
                 {% endif %}

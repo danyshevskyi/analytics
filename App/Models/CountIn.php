@@ -8,8 +8,11 @@ class CountIn extends DbOld {
 
 public $array_ip_in;
 public $table;
+public $project;
 
-public function __construct($table, $ip_out) {
+public function __construct($table, $ip_out, $project) {
+
+	$this->project = $project;
 	
 	$this->table = $table;
 
@@ -18,7 +21,7 @@ public function __construct($table, $ip_out) {
 					WHERE 
 					ip = '$ip_out' 
 					AND 
-					date_activity LIKE '$date_now';");
+					date_activity LIKE '$date_now';", $this->project);
 						$data = null;
 							while($result = $request->fetch())
 							{
@@ -61,7 +64,7 @@ public function last_user_activity() {
 				AND 
 				date_activity LIKE '$date_now'
 				AND
-				date_activity = (SELECT MAX(date_activity) FROM $this->table);");
+				date_activity = (SELECT MAX(date_activity) FROM $this->table);", $this->project);
 			}
 			else
 			{
@@ -69,7 +72,7 @@ public function last_user_activity() {
 				WHERE 
 				ip = '$ip' 
 				AND 
-				date_activity LIKE '$date_now';");
+				date_activity LIKE '$date_now';", $this->project);
 			}
 				$result = $request->fetch();
 					return $result;
