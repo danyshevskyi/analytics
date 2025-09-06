@@ -74,17 +74,15 @@
 
         <!-- Main info -->
         <div class="row text-secondary 1fst-italic mt-2 1bb 1px-1">  
-                <div class="col-6 text-start 1ps-2 1bb fst-italic 1text-secondary" 1id="city">
+                <div class="col-6 text-start 1ps-2 1bb fst-italic">
                     <span id="city"></span>
                 </div>
                 <div class="col-6 text-end 1pe-2" id="date_activity"></div> 
         </div>
 
-        <div class="row 1fs-5 pt-2 pb-4">
-        
-        <div class="col-8" id="email"></div>
-            <div class="col-3" id="activity_score"></div> 
-        
+        <div class="row pt-2 pb-4">   
+            <div class="col-8" id="email"></div>
+                <div class="col-3" id="activity_score"></div> 
         </div>
 
     <!-- More details -->
@@ -127,7 +125,7 @@
                     
         <div class="col-11 border-top mb-1 mx-auto"></div>
                     
-    <div class="row 1text-secondary fst-italic mb-2">
+    <div class="row fst-italic mb-2">
         <div class="col">
             <span class="fw-medium">Device:</span>
             "<span id="device"></span>"
@@ -136,7 +134,7 @@
 
         <div class="col-11 border-top mb-1 mx-auto"></div>
 
-    <div class="row 1text-secondary fst-italic mb-2">
+    <div class="row fst-italic mb-2">
         <div class="col">
             <span class="fw-medium">OS:</span>
             "<span id="os"></span>"
@@ -145,7 +143,7 @@
 
         <div class="col-11 border-top mb-1 mx-auto"></div>
 
-    <div class="row 1text-secondary fst-italic mb-2">
+    <div class="row fst-italic mb-2">
         <div class="col">
             <span class="fw-medium">Browser:</span>
             "<span id="browser"></span>"
@@ -154,7 +152,7 @@
 
         <div class="col-11 border-top mb-1 mx-auto"></div>
 
-    <div class="row 1text-secondary fst-italic mb-2">
+    <div class="row fst-italic mb-2">
         <div class="col">
             <span class="fw-medium">Referer:</span>
             "<span id="referer"></span>"

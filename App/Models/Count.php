@@ -172,28 +172,6 @@ public function count() {
 	}					
 }
 
-// public function send_mail($project) {
-        
-// 	if(Flight::request()->ip != '127.0.0.1')
-// 	{
-// 		$project = ucfirst($project);
-
-// 		$to = "danishevskij@gmail.com";
-// 		$subject = 'Visit - '.$project.'!';
-		
-// 		$message = "<h2><a href='#' style='color:black'>".$this->userFromId($this->token_out)."</a></h2>";
-// 		$message .= "<p style='font-size:18px'>".$this->city.", ".$this->region."</p>";
-// 		$message .= "<p style='font-size:18px'><a href='#' style='color:black'>Referer: ".$this->referer."</a></p>";
-		
-// 		$header = "From: DOV Analytics <admin@dov.pp.ua> \r\n";
-// 		$header .= "Cc:admin@dov.pp.ua \r\n";
-// 		$header .= "MIME-Version: 1.0\r\n";
-// 		$header .= "Content-type: text/html\r\n";
-		
-// 		mail($to,$subject,$message,$header);
-// 	}
-// }
-
 public function send_mail($project) {
         
 	if(Flight::request()->ip != '127.0.0.1')

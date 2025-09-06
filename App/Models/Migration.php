@@ -31,6 +31,12 @@ public $data = [
                         'name' => 'English Cards',
                         'url' => 'https://dov.pp.ua/english-cards',
                         'key_name' => 'cards'
+                    ],
+                    [
+                        'key_projects' => 5,
+                        'name' => 'Scode',
+                        'url' => 'https://dov.pp.ua/scode',
+                        'key_name' => 'scode'
                     ]
 ];
 

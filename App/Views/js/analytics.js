@@ -125,6 +125,8 @@ function pressUpdateAnalytics() {
             getAnalytics(project, period);
 }
 
+setInterval(pressUpdateAnalytics, 5000)
+
 function autostart() {
 
     // Add listener to id updateAnalytics

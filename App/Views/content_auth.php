@@ -47,29 +47,25 @@
     </div>
 </div>
 <hr>
-<div class="container mt-5 px-4">
+<div class="container px-4">
 
 {% for list in projectsList %}
 {% if list.key_name %}
-
-  <div class="row 1d-flex 1justify-content-center 1mt-5 1bb py-3 mx-auto"
-  style="max-width: 500px;">
-
-      <button type="button"
-              class="btn 1btn-outline-dark col-12 1mx-auto fs-5 bg-white"
-              onclick="getAnalytics('{{ list.key_name }}')">
-                {% if list.key_name == 'index' %}
-                  <img src="{{ list.url }}/public/favicon.ico" width="54px">
-                {% else %}
-                  <img src="{{ list.url }}/App/Views/img/favicon.ico" width="54px">
-                {% endif %}
-              {{ list.name }} <br>              
-              <span style="font-size: 14px;"> Today: </span> {{ list.count.total }}
-              <span style="font-size: 14px;">Reg:</span> {{ list.count.reg }}
-              <span style="font-size: 14px;">Online:</span> {{ list.count.online }} 
-      </button> 
- 
-    </div>
+<div class="bb1 row 1d-flex 1justify-content-center 1mt-5 1bb py-3 mx-auto" style="max-width: 500px;">
+  <button type="button"
+          class="btn 1btn-outline-dark col-12 1mx-auto fs-5 bg-white 1bb py-0"
+          onclick="getAnalytics('{{ list.key_name }}')">
+            {% if list.key_name == 'index' or list.key_name == 'scode'%}
+              <img src="{{ list.url }}/public/favicon.ico" width="54px">
+            {% else %}
+              <img src="{{ list.url }}/App/Views/img/favicon.ico" width="54px">
+            {% endif %}
+          {{ list.name }} <br>              
+          <span style="font-size: 14px;"> Today: </span> {{ list.count.total }}
+          <span style="font-size: 14px;">Reg:</span> {{ list.count.reg }}
+          <span style="font-size: 14px;">Online:</span> {{ list.count.online }} 
+  </button>
+</div>
 {% endif %}
 
 {% if not projectsList.0 %}
@@ -84,7 +80,7 @@
 
 
     <a class="text-decoration-none text-black" href="https://www.linkedin.com/in/danyshevskyi/" target="blank"> 
-    <div class="text-center mt-3" style="font-size: 13px;">Oleksii Danyshevskyi &copy; 2024 
+    <div class="text-center mt-3" style="font-size: 13px;">Oleksii Danyshevskyi &copy; 2025 
        
     <i class="bi bi-linkedin"></i>
 </div>
