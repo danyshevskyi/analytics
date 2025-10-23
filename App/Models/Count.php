@@ -8,7 +8,6 @@ use Flight;
 use \Kudashevs\AcceptLanguage\AcceptLanguage;
 use \foroco\BrowserDetection;
 
-
 class Count extends DbOld {
 
 public $token_out;
@@ -179,12 +178,14 @@ public function send_mail($project) {
 		$project = ucfirst($project);
 
 		$to = "danishevskij@gmail.com";
-		$subject = 'Visit '.$project.' - '.$this->city;
+		$subject = 'Visit '.$project.' - '.$this->country;
 
 		// Visit of Cards - Mountin View
 		
-		$message = "<h2><a href='#' style='color:black'>".$this->userFromId($this->token_out)."</a></h2>";
-		$message .= "<p style='font-size:18px'>".$this->city.", ".$this->region."</p>";
+		// $message = "<h2><a href='#' style='color:black'>".$this->userFromId($this->token_out)."</a></h2>";
+		// $message .= "<p style='font-size:18px'>".$this->city.", ".$this->region."</p>";
+		
+		$message = "<p style='font-size:18px'>".$this->city.", ".$this->region."</p>";
 		
 		$header = "From: DOV Analytics <admin@dov.pp.ua> \r\n";
 		$header .= "Cc:admin@dov.pp.ua \r\n";
