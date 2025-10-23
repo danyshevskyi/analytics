@@ -328,11 +328,11 @@ public function add() {
 				'$this->referer', '$this->country', '$this->lang',
 				'$this->latitude', '$this->longitude')", $this->project);
 
-			if($this->mode == 'all')
+			if($this->mode == 'all' AND $this->country !== 'Russia')
 			{
 				$this->send_mail($this->project);
 			}
-			elseif($this->mode == 'reg' AND $this->token_out !== 0)
+			elseif($this->mode == 'reg' AND $this->token_out !== 0 AND $this->country !== 'Russia')
 			{
 				$this->send_mail($this->project);	
 			}         
