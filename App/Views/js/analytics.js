@@ -125,7 +125,7 @@ function pressUpdateAnalytics() {
             getAnalytics(project, period);
 }
 
-setInterval(pressUpdateAnalytics, 5000)
+// setInterval(pressUpdateAnalytics, 5000)
 
 function autostart() {
 
